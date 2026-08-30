@@ -15,10 +15,13 @@ classifier can hit high clean-data accuracy by learning "has JPEG artifacts => r
 that says nothing about actual generative artifacts and collapses the moment a real photo gets
 uploaded through TikTok's own recompression pipeline.
 
-**Verification**: `SymmetricAugmenter.__call__` is invoked once per image inside a loop that
-iterates over both `real_dir` and `fake_dir` with the same augmenter instance and the same RNG
-sequence (see `build_dataset` in `src/frequency/train_svm.py` and `RealFakeDataset` in
-`src/model/train.py`) — there is no per-class branch anywhere in the augmentation path.
+**Verification**: `SymmetricAugmenter.__call__` is invoked once per image, and the image's
+real/fake label is never an input to the transform draw. In `RealFakeDataset`
+(`src/model/train.py`) a single augmenter instance is shared across both classes. In
+`build_dataset` (`src/frequency/train_svm.py`) feature extraction is parallelized across
+processes, so each image gets its own augmenter seeded by `f"{seed}:{path}"` — the seed value
+is label-independent, so the sampled transform distribution is identical for real and fake.
+There is no per-class branch anywhere in the augmentation path in either script.
 
 ## 2. Cross-generator holdout test (run via `src/eval/cross_generator.py`)
 
@@ -34,13 +37,19 @@ python -m src.eval.cross_generator --data-root data/raw/wildfake --holdout-famil
 
 ### Results
 
-*Pending a training run with real WildFake data — this repo was built without GPU/dataset access
-in this environment. Fill in this table after running the command above for at least one held-out
-family:*
+**Still pending** — the first-pass training run used SID_Set, which is not split by generator
+family, so the cross-generator holdout could not be run yet. It needs the WildFake split
+(`data/README.md`); run the command above for at least one held-out family before the final
+submission and fill this table:
 
 | Holdout family | In-distribution val AUC | Held-out family AUC | Gap |
 |---|---|---|---|
 | _(e.g. diffusion)_ | | | |
+
+Interim note from the SID_Set run: the false negatives in `docs/error_analysis.md` are all
+locally-tampered images, not a generator-family artifact — so the largest known error mode so far
+is a *manipulation-type* blind spot, not an obvious generator-specific shortcut. The
+cross-generator number is still needed to rule out the latter.
 
 **How to read the gap**: a gap under ~0.05 AUC suggests the model is learning generalizable
 artifacts; a large gap (>0.15) is a signal to inspect Tier 2's feature importances and Tier 1's

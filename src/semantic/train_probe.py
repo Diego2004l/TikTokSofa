@@ -16,14 +16,15 @@ from src.model.train import list_images
 from src.semantic.embed import ClipEmbedder
 
 
-def build_dataset(embedder: ClipEmbedder, real_dir: str, fake_dir: str):
+def build_dataset(embedder: ClipEmbedder, real_dir: str, fake_dir: str, batch_size: int = 64):
     X, y = [], []
     for label, folder in ((0, real_dir), (1, fake_dir)):
-        for path in list_images(folder):
-            img = Image.open(path).convert("RGB")
-            X.append(embedder.embed_image(img).numpy())
-            y.append(label)
-    return np.stack(X), np.array(y)
+        paths = list_images(folder)
+        for i in range(0, len(paths), batch_size):
+            imgs = [Image.open(p).convert("RGB") for p in paths[i : i + batch_size]]
+            X.append(embedder.embed_batch(imgs).numpy())
+            y.extend([label] * len(imgs))
+    return np.concatenate(X), np.array(y)
 
 
 def main():

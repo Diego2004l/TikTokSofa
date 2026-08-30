@@ -23,6 +23,9 @@ data/cache/
 *.ckpt
 *.joblib
 
+# Scratch dirs/caches written by training + eval scripts
+outputs/_*
+
 # OS
 .DS_Store
 

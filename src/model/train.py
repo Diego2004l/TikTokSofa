@@ -94,8 +94,9 @@ def main():
 
     train_ds = RealFakeDataset(os.path.join(split_root, "train", "real"), os.path.join(split_root, "train", "fake"), train=True, seed=args.seed)
     val_ds = RealFakeDataset(os.path.join(split_root, "val", "real"), os.path.join(split_root, "val", "fake"), train=False, seed=args.seed)
-    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=2)
-    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=2)
+    pin = args.device == "cuda"
+    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=2, pin_memory=pin)
+    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=2, pin_memory=pin)
 
     model = Tier1CNN(pretrained=True).to(args.device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr)

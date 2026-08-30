@@ -14,6 +14,7 @@ import random
 
 import joblib
 import numpy as np
+from joblib import Parallel, delayed
 from PIL import Image
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
@@ -33,19 +34,26 @@ def list_images(folder: str) -> list[str]:
     return sorted(paths)
 
 
-def build_dataset(real_dir: str, fake_dir: str, n_augments_per_image: int, seed: int = 0):
-    rng = random.Random(seed)
-    augmenter = SymmetricAugmenter(rng=rng)
+def _features_for_path(path: str, label: int, n_augments_per_image: int, seed: int, max_image_dim: int | None):
+    # Per-image RNG keyed by path so the augmentation draw is deterministic and parallel-safe
+    # (a single shared augmenter can't be pickled across joblib workers, and its draw order
+    # would depend on scheduling). Still symmetric: label is never an input to the transform.
+    augmenter = SymmetricAugmenter(rng=random.Random(f"{seed}:{path}"))
+    img = Image.open(path).convert("RGB")
+    variants = [img] + [augmenter(img) for _ in range(n_augments_per_image)]
+    return [(extract_all_features(v, max_dim=max_image_dim)["vector"], label) for v in variants]
 
+
+def build_dataset(real_dir: str, fake_dir: str, n_augments_per_image: int, seed: int = 0, max_image_dim: int | None = None, n_jobs: int = -1):
+    tasks = [(p, 0) for p in list_images(real_dir)] + [(p, 1) for p in list_images(fake_dir)]
+    results = Parallel(n_jobs=n_jobs, prefer="processes")(
+        delayed(_features_for_path)(path, label, n_augments_per_image, seed, max_image_dim) for path, label in tasks
+    )
     X, y = [], []
-    for label, folder in ((0, real_dir), (1, fake_dir)):
-        for path in list_images(folder):
-            img = Image.open(path).convert("RGB")
-            variants = [img] + [augmenter(img) for _ in range(n_augments_per_image)]
-            for variant in variants:
-                feats = extract_all_features(variant)["vector"]
-                X.append(feats)
-                y.append(label)
+    for group in results:
+        for feats, label in group:
+            X.append(feats)
+            y.append(label)
     return np.stack(X), np.array(y)
 
 
@@ -57,9 +65,14 @@ def main():
     parser.add_argument("--n-augments-per-image", type=int, default=2)
     parser.add_argument("--out", default="outputs/tier2_classifier.joblib")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--max-image-dim", type=int, default=None,
+                        help="Cap the longer image side (px) before feature extraction — big speedup for iteration. "
+                             "Pass the SAME value to src/infer.py. Leave unset for the final run (see features.py).")
+    parser.add_argument("--n-jobs", type=int, default=-1, help="Parallel workers for feature extraction (-1 = all cores).")
     args = parser.parse_args()
 
-    X, y = build_dataset(args.real_dir, args.fake_dir, args.n_augments_per_image, args.seed)
+    X, y = build_dataset(args.real_dir, args.fake_dir, args.n_augments_per_image, args.seed,
+                         max_image_dim=args.max_image_dim, n_jobs=args.n_jobs)
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=args.seed, stratify=y)
 
     if args.classifier == "rf":

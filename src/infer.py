@@ -76,6 +76,7 @@ def main():
     parser.add_argument("--tier3-probe", default="outputs/tier3_clip_probe.joblib")
     parser.add_argument("--fusion-model", default="outputs/fusion_model.joblib")
     parser.add_argument("--use-provenance-api", action="store_true", help="Also call the optional OpenAI-assisted check (needs OPENAI_API_KEY).")
+    parser.add_argument("--max-image-dim", type=int, default=None, help="Must match the value used for src/frequency/train_svm.py (Tier 2). Leave unset unless Tier 2 was trained with it.")
     parser.add_argument("--escalation-margin", type=float, default=0.15, help="Escalate to Tier 1/3 if Tier 2's score is within this margin of 0.5.")
     parser.add_argument("--always-escalate", action="store_true", help="Force Tier 1 + Tier 3 to run on every image (used by the robustness eval).")
     parser.add_argument("--threshold", type=float, default=0.5)
@@ -121,7 +122,7 @@ def main():
             })
             continue
 
-        forensic = extract_all_features(img)
+        forensic = extract_all_features(img, max_dim=args.max_image_dim)
         t2_score = float(tier2_clf.predict_proba(forensic["vector"].reshape(1, -1))[0, 1]) if tier2_clf is not None else 0.5
         degradation = forensic["degradation_score"]
 

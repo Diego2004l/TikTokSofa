@@ -65,9 +65,9 @@ python -m src.frequency.train_svm --real-dir data/raw/cifake/train/REAL --fake-d
 # 3. Tier 3 — CLIP linear probe
 python -m src.semantic.train_probe --real-dir data/raw/cifake/train/REAL --fake-dir data/raw/cifake/train/FAKE --out outputs/tier3_clip_probe.joblib
 
-# 4. Fusion meta-model — see train_fusion() in src/fusion.py; wire it up to scores collected
-#    over a held-out split once tiers 1-3 are trained (a small driver script is the natural next
-#    addition once real data is in place).
+# 4. Fusion meta-model — runs Tiers 0-3 over a HELD-OUT split (not used to train tiers 1-3),
+#    then fits the degradation-aware logistic-regression meta-model.
+python -m src.train_fusion --real-dir data/raw/sid_set/eval/real --fake-dir data/raw/sid_set/eval/fake --scores-cache outputs/_fusion_scores.npz
 
 # 5. Run the cascade end-to-end
 python -m src.infer path/to/image_dir --out outputs/predictions.json
@@ -85,11 +85,19 @@ after step 1 to confirm the JSON schema end-to-end even before every tier is tra
 
 ## Limitations (current state of this repo)
 
-This repo was built in an environment with no GPU and no dataset access, so **no tier has
-actually been trained on real data yet** — every training/eval script above is implemented and
-runnable, but `outputs/*.joblib` / `outputs/*.pt` don't exist until you run them against real
-data. `docs/error_analysis.md` and `docs/shortcut_learning_check.md` are templates with the
-methodology filled in and the results left for you to fill in after a real training run.
+**First-pass results are in** (`outputs/robustness_summary.csv`, `docs/error_analysis.md`): a
+small Kaggle-T4 run on 4 SID_Set shards — fused AUC 0.955 clean / 0.949 robust-avg, beating every
+individual tier. `notebooks/colab_train.ipynb` (Colab **and** Kaggle) or `scripts/run_all.sh`
+(local, no GPU needed) reproduce it end to end.
+
+Known gaps before the final submission, in priority order:
+- Trained on a ~2:1 fake-heavy split with no threshold calibration -> ~34% false-positive rate at
+  a raw 0.5 cut despite the high AUC (`docs/error_analysis.md` has the fix).
+- Tier 1 is only lightly trained (4 epochs, ~1k images) — its 0.76 AUC drags the fused ceiling.
+- Cross-generator holdout (`docs/shortcut_learning_check.md`) not yet run — needs the WildFake split.
+- Headline numbers should come from the COCO + DALL-E benchmark set (spec section 2), not the
+  SID_Set held-out split used for iteration.
+- `*.joblib` / `*.pt` weights are gitignored — rerun the notebook/script to regenerate them.
 
 ## Related work — what's standard vs. what's this project's contribution
 

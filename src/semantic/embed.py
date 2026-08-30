@@ -19,10 +19,10 @@ PRETRAINED = "openai"
 
 
 class ClipEmbedder:
-    def __init__(self, device: str = "cpu"):
-        self.device = device
+    def __init__(self, device: str | None = None):
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.model, _, self.preprocess = open_clip.create_model_and_transforms(MODEL_NAME, pretrained=PRETRAINED)
-        self.model.eval().to(device)
+        self.model.eval().to(self.device)
         for param in self.model.parameters():
             param.requires_grad = False
 

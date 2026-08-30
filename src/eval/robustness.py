@@ -32,13 +32,13 @@ from src.model.train import list_images
 from src.semantic.embed import ClipEmbedder
 
 
-def score_tier2(clf, paths, transform):
+def score_tier2(clf, paths, transform, max_image_dim=None):
     scores, degradations = [], []
     for path in paths:
         img = Image.open(path).convert("RGB")
         if transform is not None:
             img = transform(img)
-        feats = extract_all_features(img)
+        feats = extract_all_features(img, max_dim=max_image_dim)
         scores.append(float(clf.predict_proba(feats["vector"].reshape(1, -1))[0, 1]))
         degradations.append(feats["degradation_score"])
     return scores, degradations
@@ -71,6 +71,7 @@ def main():
     parser.add_argument("--tier3-probe", default="outputs/tier3_clip_probe.joblib")
     parser.add_argument("--fusion-model", default="outputs/fusion_model.joblib")
     parser.add_argument("--out", default="outputs/robustness_summary.csv")
+    parser.add_argument("--max-image-dim", type=int, default=None, help="Match the value used to train Tier 2.")
     args = parser.parse_args()
 
     real_paths = list_images(args.real_dir)[: args.n_samples]
@@ -101,7 +102,7 @@ def main():
             t1_scores, row["tier1_auc"] = None, float("nan")
 
         if tier2_clf is not None:
-            t2_scores, degradations = score_tier2(tier2_clf, real_paths + fake_paths, transform)
+            t2_scores, degradations = score_tier2(tier2_clf, real_paths + fake_paths, transform, args.max_image_dim)
             row["tier2_auc"] = safe_auc(y_true, t2_scores)
         else:
             t2_scores, degradations, row["tier2_auc"] = None, None, float("nan")

@@ -29,6 +29,23 @@ def _to_gray(img: Image.Image) -> np.ndarray:
     return np.asarray(img.convert("L"), dtype=np.float32)
 
 
+def _maybe_downscale(img: Image.Image, max_dim: int | None) -> Image.Image:
+    """Optional speed knob: cap the longer side at `max_dim` before feature extraction.
+    Feature cost is roughly O(pixels) (windowed FFT patch count, NL-means denoise), so going
+    from 1024px to ~384px is a large speedup. Trade-off: the 8x8 block-grid / double-JPEG
+    signals weaken once the native JPEG grid is resampled away, so leave this unset (None) for
+    the final run and only use it for fast iteration. Whatever value is used here MUST also be
+    passed to inference (src/infer.py --max-image-dim) so train/serve feature distributions match.
+    """
+    if max_dim is None:
+        return img
+    w, h = img.size
+    if max(w, h) <= max_dim:
+        return img
+    scale = max_dim / max(w, h)
+    return img.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
+
+
 def _radial_profile(power: np.ndarray, n_bins: int = 8) -> np.ndarray:
     h, w = power.shape
     cy, cx = h // 2, w // 2
@@ -148,7 +165,8 @@ def block_grid_alignment(gray: np.ndarray) -> float:
     return float(grid_strength / (interior_strength + 1e-8))
 
 
-def extract_all_features(img: Image.Image) -> dict:
+def extract_all_features(img: Image.Image, max_dim: int | None = None) -> dict:
+    img = _maybe_downscale(img, max_dim)
     gray = _to_gray(img)
     fft_feats = windowed_fft_features(gray)
     autocorr_feats = autocorrelation_features(gray)
