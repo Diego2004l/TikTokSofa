@@ -24,3 +24,6 @@ openai>=1.30
 # Notebooks
 jupyter>=1.0
 ipykernel>=6.29
+
+# Tests (optional — the tests/ modules also run standalone: `python -m tests.test_transforms`)
+pytest>=8.0

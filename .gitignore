@@ -16,6 +16,7 @@ env/
 data/raw/
 data/processed/
 data/cache/
+data/archive/
 
 # Trained weights / large artifacts
 *.pt

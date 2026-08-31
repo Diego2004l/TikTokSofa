@@ -1,8 +1,9 @@
 [
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_000008.png",
-    "pred": 0.5470861541720873,
+    "image_path": "data/archive/test_small/FAKE/189.jpg",
+    "pred": 0.9950502532330997,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -10,17 +11,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.006478655617684126,
-      "tier2": 0.6633556230979027,
-      "tier3": 0.7980281900398496
+      "tier1": 0.9999650716781616,
+      "tier2": 0.8354618160037125,
+      "tier3": 0.7784784833597125
     },
-    "degradation_score": 0.15334935050926918,
-    "truth": "fake"
+    "fusion_pred": 0.9950502532330997,
+    "router_pred": null,
+    "degradation_score": 0.2309609489586767,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_000077.png",
-    "pred": 0.9091511727204274,
-    "label": "fake",
+    "image_path": "data/archive/test_small/FAKE/204 (8).jpg",
+    "pred": 0.4851573709089778,
+    "label": "real",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -28,17 +32,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.8861983418464661,
-      "tier2": 0.9072610399334288,
-      "tier3": 0.9418795550389956
+      "tier1": 0.4693506360054016,
+      "tier2": 0.21350951581366384,
+      "tier3": 0.7747607609932399
     },
-    "degradation_score": 0.17477519970489616,
-    "truth": "fake"
+    "fusion_pred": 0.4851573709089778,
+    "router_pred": null,
+    "degradation_score": 0.25110951430383815,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_000702.png",
-    "pred": 0.92506366504809,
+    "image_path": "data/archive/test_small/FAKE/214 (8).jpg",
+    "pred": 0.997604435995293,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -46,17 +53,188 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.9999967813491821,
-      "tier2": 0.9444672885384526,
-      "tier3": 0.9394734911318816
+      "tier1": 1.0,
+      "tier2": 0.8237203405238552,
+      "tier3": 0.9967669918043512
     },
-    "degradation_score": 0.19391726176781476,
-    "truth": "fake"
+    "fusion_pred": 0.997604435995293,
+    "router_pred": null,
+    "degradation_score": 0.194314681231257,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_000882.png",
-    "pred": 0.876855621499414,
+    "image_path": "data/archive/test_small/FAKE/245 (7).jpg",
+    "pred": 0.9966906883405694,
     "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999581575393677,
+      "tier2": 0.9171066285107291,
+      "tier3": 0.8214320401933739
+    },
+    "fusion_pred": 0.9966906883405694,
+    "router_pred": null,
+    "degradation_score": 0.19971693245694153,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/383 (3).jpg",
+    "pred": 0.7831075577053513,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.8122637867927551,
+      "tier2": 0.22517462251881176,
+      "tier3": 0.4303371558165556
+    },
+    "fusion_pred": 0.7831075577053513,
+    "router_pred": null,
+    "degradation_score": 0.1800817078169194,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/400 (7).jpg",
+    "pred": 0.9983829021919152,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 1.0,
+      "tier2": 0.9793204382476763,
+      "tier3": 0.9817282079942784
+    },
+    "fusion_pred": 0.9983829021919152,
+    "router_pred": null,
+    "degradation_score": 0.17649776201473555,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/410 (7).jpg",
+    "pred": 0.9983562916285127,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 1.0,
+      "tier2": 0.9678326328324871,
+      "tier3": 0.9996981519349476
+    },
+    "fusion_pred": 0.9983562916285127,
+    "router_pred": null,
+    "degradation_score": 0.20614999591833114,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/419 (10).jpg",
+    "pred": 0.9922859240588846,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.8716502785682678,
+      "tier2": 0.892375253991266,
+      "tier3": 0.8454948628444683
+    },
+    "fusion_pred": 0.9922859240588846,
+    "router_pred": null,
+    "degradation_score": 0.16801422115230658,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/441 (8).jpg",
+    "pred": 0.9968328853574598,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999988079071045,
+      "tier2": 0.7635755604858218,
+      "tier3": 0.9550402076709719
+    },
+    "fusion_pred": 0.9968328853574598,
+    "router_pred": null,
+    "degradation_score": 0.17710088095939014,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/451 (8).jpg",
+    "pred": 0.608458364478273,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.46176350116729736,
+      "tier2": 0.5326334168743437,
+      "tier3": 0.6934805097044036
+    },
+    "fusion_pred": 0.608458364478273,
+    "router_pred": null,
+    "degradation_score": 0.20577725432888555,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/529 (8).jpg",
+    "pred": 0.9970728865433764,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999998807907104,
+      "tier2": 0.8317445414206937,
+      "tier3": 0.9258139855032734
+    },
+    "fusion_pred": 0.9970728865433764,
+    "router_pred": null,
+    "degradation_score": 0.18934632087805586,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/539 (8).jpg",
+    "pred": 0.9978846283458611,
+    "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -65,232 +243,19 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 0.9999997615814209,
-      "tier2": 0.8373458893729316,
-      "tier3": 0.9093134299952971
+      "tier2": 0.9144733725306208,
+      "tier3": 0.9496774854358769
     },
-    "degradation_score": 0.25162877425338437,
-    "truth": "fake"
+    "fusion_pred": 0.9978846283458611,
+    "router_pred": null,
+    "degradation_score": 0.1696730125059432,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_000902.png",
-    "pred": 0.9301942522643385,
+    "image_path": "data/archive/test_small/FAKE/568 (7).jpg",
+    "pred": 0.9983616779920855,
     "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9998773336410522,
-      "tier2": 0.9614262001761953,
-      "tier3": 0.9253360473331501
-    },
-    "degradation_score": 0.1779458177902608,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_001072.png",
-    "pred": 0.7361304626167224,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0010687160538509488,
-      "tier2": 0.871385426450356,
-      "tier3": 0.9000611393648231
-    },
-    "degradation_score": 0.1865794277120128,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_001094.png",
-    "pred": 0.9247658880872103,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999964237213135,
-      "tier2": 0.9432432235813217,
-      "tier3": 0.902978418738469
-    },
-    "degradation_score": 0.1698070455551249,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_001209.png",
-    "pred": 0.9194879266481857,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999997615814209,
-      "tier2": 0.9366689506917064,
-      "tier3": 0.9157300694003433
-    },
-    "degradation_score": 0.19713118536985758,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_001311.png",
-    "pred": 0.7022221885200817,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6845316290855408,
-      "tier2": 0.7067811459706802,
-      "tier3": 0.7218677842025594
-    },
-    "degradation_score": 0.23354024144521734,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_002565.png",
-    "pred": 0.8458958476516263,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9943100214004517,
-      "tier2": 0.7778925636787387,
-      "tier3": 0.8262452795437591
-    },
-    "degradation_score": 0.20862599862087455,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_002764.png",
-    "pred": 0.9062812496693886,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999815225601196,
-      "tier2": 0.9002020159952517,
-      "tier3": 0.8889626809337708
-    },
-    "degradation_score": 0.19479737459438032,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_002872.png",
-    "pred": 0.8917741184757588,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999812841415405,
-      "tier2": 0.8117264585893051,
-      "tier3": 0.9513590059042387
-    },
-    "degradation_score": 0.1804094686016905,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_003406.png",
-    "pred": 0.8292573352581653,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9980095028877258,
-      "tier2": 0.6689952124797544,
-      "tier3": 0.9323840990278648
-    },
-    "degradation_score": 0.17818356123458787,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004113.png",
-    "pred": 0.877823076777813,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.7951667308807373,
-      "tier2": 0.8999980427939195,
-      "tier3": 0.862502862030824
-    },
-    "degradation_score": 0.19711815600958704,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004118.png",
-    "pred": 0.8072578964509077,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.11878276616334915,
-      "tier2": 0.9276381290814887,
-      "tier3": 0.9313164985711948
-    },
-    "degradation_score": 0.18003910619690086,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004150.png",
-    "pred": 0.8386998538540771,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.59422367811203,
-      "tier2": 0.8517834151588712,
-      "tier3": 0.8752483893288707
-    },
-    "degradation_score": 0.17341360589055688,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004510.png",
-    "pred": 0.92963200790368,
-    "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -299,16 +264,19 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 1.0,
-      "tier2": 0.9692568581336406,
-      "tier3": 0.9361862163492676
+      "tier2": 0.9565753429518546,
+      "tier3": 0.9964719620085302
     },
-    "degradation_score": 0.19788522486523935,
-    "truth": "fake"
+    "fusion_pred": 0.9983616779920855,
+    "router_pred": null,
+    "degradation_score": 0.17483216766791942,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004934.png",
-    "pred": 0.6920189454396235,
+    "image_path": "data/archive/test_small/FAKE/578 (7).jpg",
+    "pred": 0.9342858851040737,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -316,17 +284,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.07087210565805435,
-      "tier2": 0.7584168481995507,
-      "tier3": 0.9471817650800964
+      "tier1": 0.7893772721290588,
+      "tier2": 0.8423624948312832,
+      "tier3": 0.37749217220164794
     },
-    "degradation_score": 0.1831311637593644,
-    "truth": "fake"
+    "fusion_pred": 0.9342858851040737,
+    "router_pred": null,
+    "degradation_score": 0.1708925456196703,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004942.png",
-    "pred": 0.9227130730658216,
+    "image_path": "data/archive/test_small/FAKE/613 (9).jpg",
+    "pred": 0.9721363216500435,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -334,17 +305,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.9999982118606567,
-      "tier2": 0.9584624792555397,
-      "tier3": 0.9319470749154846
+      "tier1": 0.8364651799201965,
+      "tier2": 0.7327938748009072,
+      "tier3": 0.6693685891270035
     },
-    "degradation_score": 0.21871296058956624,
-    "truth": "fake"
+    "fusion_pred": 0.9721363216500435,
+    "router_pred": null,
+    "degradation_score": 0.20785805876724714,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_004989.png",
-    "pred": 0.8589377342902569,
+    "image_path": "data/archive/test_small/FAKE/63.jpg",
+    "pred": 0.9944911713990141,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -352,17 +326,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.9993492960929871,
-      "tier2": 0.7628940840673653,
-      "tier3": 0.9303316696291426
+      "tier1": 0.9927582740783691,
+      "tier2": 0.5916814421454534,
+      "tier3": 0.9439173419388361
     },
-    "degradation_score": 0.23012981111428066,
-    "truth": "fake"
+    "fusion_pred": 0.9944911713990141,
+    "router_pred": null,
+    "degradation_score": 0.17844256329525432,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_005113.png",
-    "pred": 0.9205623029643222,
+    "image_path": "data/archive/test_small/FAKE/642 (6).jpg",
+    "pred": 0.9637324675077378,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -370,53 +347,20 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.9999603033065796,
-      "tier2": 0.9464504131905793,
-      "tier3": 0.8893754053243114
+      "tier1": 0.9946547746658325,
+      "tier2": 0.4549492628050773,
+      "tier3": 0.45478140595413574
     },
-    "degradation_score": 0.18665381592776537,
-    "truth": "fake"
+    "fusion_pred": 0.9637324675077378,
+    "router_pred": null,
+    "degradation_score": 0.18312985449754407,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_005248.png",
-    "pred": 0.8684634458111261,
+    "image_path": "data/archive/test_small/FAKE/77.jpg",
+    "pred": 0.9968062242697427,
     "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.7372861504554749,
-      "tier2": 0.8737135618497099,
-      "tier3": 0.8806159609815578
-    },
-    "degradation_score": 0.1803930155694654,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_005299.png",
-    "pred": 0.8394632960414481,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999983310699463,
-      "tier2": 0.7629063569228876,
-      "tier3": 0.8850863407808888
-    },
-    "degradation_score": 0.2652985418803193,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_005645.png",
-    "pred": 0.8845868733146363,
-    "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -425,16 +369,19 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 1.0,
-      "tier2": 0.8262591017782411,
-      "tier3": 0.9093101099142336
+      "tier2": 0.71772816363771,
+      "tier3": 0.9974599256447202
     },
-    "degradation_score": 0.2023110190102967,
-    "truth": "fake"
+    "fusion_pred": 0.9968062242697427,
+    "router_pred": null,
+    "degradation_score": 0.20727113019120597,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_005931.png",
-    "pred": 0.8562829224298515,
+    "image_path": "data/archive/test_small/FAKE/784 (2).jpg",
+    "pred": 0.9829803841912788,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -442,17 +389,83 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.9999680519104004,
-      "tier2": 0.79458577835081,
-      "tier3": 0.7835494225990677
+      "tier1": 0.9999996423721313,
+      "tier2": 0.09013449083570876,
+      "tier3": 0.9872489778794656
     },
-    "degradation_score": 0.1658013584998278,
-    "truth": "fake"
+    "fusion_pred": 0.9829803841912788,
+    "router_pred": null,
+    "degradation_score": 0.20353732547160092,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_006478.png",
-    "pred": 0.9342387524374999,
+    "image_path": "data/archive/test_small/FAKE/80 (8).jpg",
+    "pred": 0.020151575850208246,
+    "label": "real",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.19700388610363007,
+      "tier2": 0.1517402993831667,
+      "tier3": 0.24618049064250416
+    },
+    "fusion_pred": 0.020151575850208246,
+    "router_pred": null,
+    "degradation_score": 0.18799059856017108,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/823.jpg",
+    "pred": 0.9978367628869651,
     "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999231100082397,
+      "tier2": 0.8833916043785847,
+      "tier3": 0.9768115805019948
+    },
+    "fusion_pred": 0.9978367628869651,
+    "router_pred": null,
+    "degradation_score": 0.18791257716830917,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/837.jpg",
+    "pred": 0.9071535342190942,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.6974074244499207,
+      "tier2": 0.6391647172420154,
+      "tier3": 0.6623388590109053
+    },
+    "fusion_pred": 0.9071535342190942,
+    "router_pred": null,
+    "degradation_score": 0.21985882621252895,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/839 (4).jpg",
+    "pred": 0.9980340145535215,
+    "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -461,16 +474,19 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 1.0,
-      "tier2": 0.9688441764255248,
-      "tier3": 0.94651471352923
+      "tier2": 0.9402947937768388,
+      "tier3": 0.9740460218121594
     },
-    "degradation_score": 0.17775229462081857,
-    "truth": "fake"
+    "fusion_pred": 0.9980340145535215,
+    "router_pred": null,
+    "degradation_score": 0.22313610660828298,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_006516.png",
-    "pred": 0.9265128933972396,
+    "image_path": "data/archive/test_small/FAKE/848 (2).jpg",
+    "pred": 0.9964330938932392,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -479,16 +495,19 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 0.9999998807907104,
-      "tier2": 0.9750893207973225,
-      "tier3": 0.9194149344864134
+      "tier2": 0.6697123160068053,
+      "tier3": 0.9989206517097251
     },
-    "degradation_score": 0.2107752654717583,
-    "truth": "fake"
+    "fusion_pred": 0.9964330938932392,
+    "router_pred": null,
+    "degradation_score": 0.1827158054559187,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_006970.png",
-    "pred": 0.6365976734055963,
+    "image_path": "data/archive/test_small/FAKE/858 (2).jpg",
+    "pred": 0.9877160709154615,
     "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -496,17 +515,104 @@
     ],
     "tier_scores": {
       "tier0": null,
-      "tier1": 0.996024489402771,
-      "tier2": 0.4075026937049823,
-      "tier3": 0.8804726968292734
+      "tier1": 0.9022186398506165,
+      "tier2": 0.5999725570654914,
+      "tier3": 0.885968167790197
     },
-    "degradation_score": 0.2084797393340756,
-    "truth": "fake"
+    "fusion_pred": 0.9877160709154615,
+    "router_pred": null,
+    "degradation_score": 0.18505715581256937,
+    "transformation_profile": null
   },
   {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_007456.png",
-    "pred": 0.893370995521216,
+    "image_path": "data/archive/test_small/FAKE/889 (10).jpg",
+    "pred": 0.9982123520202859,
     "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999992847442627,
+      "tier2": 0.9353136372860905,
+      "tier3": 0.9962255236928159
+    },
+    "fusion_pred": 0.9982123520202859,
+    "router_pred": null,
+    "degradation_score": 0.1964721158598443,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/90 (8).jpg",
+    "pred": 0.9953546373378612,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9999996423721313,
+      "tier2": 0.7900911566608649,
+      "tier3": 0.8177119218256101
+    },
+    "fusion_pred": 0.9953546373378612,
+    "router_pred": null,
+    "degradation_score": 0.19358798192722335,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/920 (2).jpg",
+    "pred": 0.17673799440247914,
+    "label": "real",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.5456772446632385,
+      "tier2": 0.2983753247023426,
+      "tier3": 0.07748628657985726
+    },
+    "fusion_pred": 0.17673799440247914,
+    "router_pred": null,
+    "degradation_score": 0.18224137876078272,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/930 (2).jpg",
+    "pred": 0.9812121982789359,
+    "label": "fake",
+    "combiner": "existing_fusion",
+    "tiers_used": [
+      "tier2",
+      "tier1",
+      "tier3"
+    ],
+    "tier_scores": {
+      "tier0": null,
+      "tier1": 0.9994205236434937,
+      "tier2": 0.7575223820059009,
+      "tier3": 0.3996454426883805
+    },
+    "fusion_pred": 0.9812121982789359,
+    "router_pred": null,
+    "degradation_score": 0.183805131052727,
+    "transformation_profile": null
+  },
+  {
+    "image_path": "data/archive/test_small/FAKE/941 (4).jpg",
+    "pred": 0.9981484197907842,
+    "label": "fake",
+    "combiner": "existing_fusion",
     "tiers_used": [
       "tier2",
       "tier1",
@@ -515,1792 +621,12 @@
     "tier_scores": {
       "tier0": null,
       "tier1": 1.0,
-      "tier2": 0.8556457135958364,
-      "tier3": 0.9005523262847082
-    },
-    "degradation_score": 0.1999718872174849,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_007473.png",
-    "pred": 0.8105042482474943,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.04165792465209961,
-      "tier2": 0.9716636911549148,
-      "tier3": 0.8788681992994145
-    },
-    "degradation_score": 0.16176667237183656,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_007491.png",
-    "pred": 0.9225649972341747,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9995396137237549,
-      "tier2": 0.9599384003037291,
-      "tier3": 0.9317966855137259
-    },
-    "degradation_score": 0.22095617586816885,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_007583.png",
-    "pred": 0.7779950081600876,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.025683674961328506,
-      "tier2": 0.9027686170198389,
-      "tier3": 0.9384443128724708
-    },
-    "degradation_score": 0.17765073051972763,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_007794.png",
-    "pred": 0.8362860839581937,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9428418278694153,
-      "tier2": 0.7292849660425886,
-      "tier3": 0.8930033122357948
-    },
-    "degradation_score": 0.1916191972392285,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008179.png",
-    "pred": 0.9174495600764875,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 1.0,
-      "tier2": 0.9168994610454452,
-      "tier3": 0.9655495699882904
-    },
-    "degradation_score": 0.21690753577624422,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008231.png",
-    "pred": 0.8730164043301162,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999995231628418,
-      "tier2": 0.7775743776651957,
-      "tier3": 0.9174284503670603
-    },
-    "degradation_score": 0.18154284214044658,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008372.png",
-    "pred": 0.9342272401870593,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9857741594314575,
-      "tier2": 0.9690243821727461,
-      "tier3": 0.9331733796392709
-    },
-    "degradation_score": 0.16346079893065907,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008392.png",
-    "pred": 0.5726458335984701,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9997859597206116,
-      "tier2": 0.3370351434494204,
-      "tier3": 0.8596374363935927
-    },
-    "degradation_score": 0.1993579715541919,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008404.png",
-    "pred": 0.9215119214928874,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999582767486572,
-      "tier2": 0.9412411436490032,
-      "tier3": 0.9285379324328281
-    },
-    "degradation_score": 0.2012208569399205,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_008801.png",
-    "pred": 0.8878661156339602,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9997469782829285,
-      "tier2": 0.7864579720553536,
-      "tier3": 0.9560967544259658
-    },
-    "degradation_score": 0.16016985815638496,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/full_synthetic_009705.png",
-    "pred": 0.8186906780482227,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9885468482971191,
-      "tier2": 0.7043281357747846,
-      "tier3": 0.8778119328813203
-    },
-    "degradation_score": 0.22893770519154857,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00103.png",
-    "pred": 0.7809478142890918,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999353885650635,
-      "tier2": 0.7410037501531357,
-      "tier3": 0.6134956872211489
-    },
-    "degradation_score": 0.17719107379302568,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00122.png",
-    "pred": 0.2995368727210941,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 2.3032280296320096e-05,
-      "tier2": 0.5469323987807758,
-      "tier3": 0.4860478362021289
-    },
-    "degradation_score": 0.19683089259678305,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00456.png",
-    "pred": 0.7708141198607155,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.2881939113140106,
-      "tier2": 0.9795449754200394,
-      "tier3": 0.651801483548132
-    },
-    "degradation_score": 0.21242078201298292,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_005088.png",
-    "pred": 0.5589210873349436,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9913631677627563,
-      "tier2": 0.5061156212979325,
-      "tier3": 0.5364209421527392
-    },
-    "degradation_score": 0.2257924473519513,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00518.png",
-    "pred": 0.8404414052550996,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9940832257270813,
-      "tier2": 0.8303434161024515,
-      "tier3": 0.6540200152673707
-    },
-    "degradation_score": 0.17185816552357752,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_005250.png",
-    "pred": 0.7540011192394614,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9984681010246277,
-      "tier2": 0.5956276007465265,
-      "tier3": 0.8774543406265203
-    },
-    "degradation_score": 0.2627773294088631,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00654.png",
-    "pred": 0.5561010679090819,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.032038599252700806,
-      "tier2": 0.8606076470403043,
-      "tier3": 0.4764228437208651
-    },
-    "degradation_score": 0.20147038874151962,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_006695.png",
-    "pred": 0.8378400625362739,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9955679774284363,
-      "tier2": 0.8145361942706153,
-      "tier3": 0.7050810566508138
-    },
-    "degradation_score": 0.19437060148272933,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_006763.png",
-    "pred": 0.4909571898108925,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 5.014208454667823e-06,
-      "tier2": 0.7356205622161475,
-      "tier3": 0.6030004201569165
-    },
-    "degradation_score": 0.2141527008227891,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00709.png",
-    "pred": 0.5815284512381097,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9170089364051819,
-      "tier2": 0.5705707117665995,
-      "tier3": 0.4470249787801109
-    },
-    "degradation_score": 0.15228727109775805,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00809.png",
-    "pred": 0.7444212368821544,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999986886978149,
-      "tier2": 0.6670891438621676,
-      "tier3": 0.6837163658869007
-    },
-    "degradation_score": 0.21385630890692858,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_00951.png",
-    "pred": 0.6584431167944663,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9998304843902588,
-      "tier2": 0.44811968405429564,
-      "tier3": 0.8567172456593736
-    },
-    "degradation_score": 0.21132042344603136,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_01043.png",
-    "pred": 0.6324627694904427,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.997624933719635,
-      "tier2": 0.467931631018482,
-      "tier3": 0.7679512294212446
-    },
-    "degradation_score": 0.22867533423601122,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_01205.png",
-    "pred": 0.39929957487673073,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 2.0102223061257973e-05,
-      "tier2": 0.7381181814210535,
-      "tier3": 0.3712805344972177
-    },
-    "degradation_score": 0.19814971034124673,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_02480.png",
-    "pred": 0.8329659571421622,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9985809326171875,
-      "tier2": 0.7134522739719659,
-      "tier3": 0.8612517735081369
-    },
-    "degradation_score": 0.17996599413595105,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_02511.png",
-    "pred": 0.8463534668858431,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9485430121421814,
-      "tier2": 0.8812411567297558,
-      "tier3": 0.6385539843720173
-    },
-    "degradation_score": 0.1903759232203159,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_02533.png",
-    "pred": 0.3952354766509171,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.003609761595726013,
-      "tier2": 0.6334343434343435,
-      "tier3": 0.715718143644214
-    },
-    "degradation_score": 0.3681639821409739,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_02644.png",
-    "pred": 0.7714859209553562,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9985793828964233,
-      "tier2": 0.669846427502488,
-      "tier3": 0.7618120657908737
-    },
-    "degradation_score": 0.21517505955523553,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_02892.png",
-    "pred": 0.7534181088172411,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6429328322410583,
-      "tier2": 0.7337455816229659,
-      "tier3": 0.830524619436201
-    },
-    "degradation_score": 0.2235531798816554,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_03478.png",
-    "pred": 0.8689378706973943,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.999990701675415,
-      "tier2": 0.8764714705849648,
-      "tier3": 0.6970471507131345
-    },
-    "degradation_score": 0.17721122227996283,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_03541.png",
-    "pred": 0.30952388753393906,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0009660264477133751,
-      "tier2": 0.5304460074722777,
-      "tier3": 0.581361805379249
-    },
-    "degradation_score": 0.244765178080544,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_04625.png",
-    "pred": 0.8983897507504925,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999998807907104,
-      "tier2": 0.897891896236779,
-      "tier3": 0.8617222539158934
-    },
-    "degradation_score": 0.20750955656678238,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_04834.png",
-    "pred": 0.8370821452794255,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999966621398926,
-      "tier2": 0.8219540925670746,
-      "tier3": 0.6757139542869011
-    },
-    "degradation_score": 0.18784974024706824,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_04879.png",
-    "pred": 0.7284896669330153,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.8337246179580688,
-      "tier2": 0.6384562838933059,
-      "tier3": 0.8069179721812098
-    },
-    "degradation_score": 0.22297243335450811,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_05143.png",
-    "pred": 0.36514765897940493,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.012266265228390694,
-      "tier2": 0.6084222698279504,
-      "tier3": 0.5378446218589319
-    },
-    "degradation_score": 0.20805136660127616,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_05404.png",
-    "pred": 0.5015124884818422,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 3.07685841107741e-05,
-      "tier2": 0.7929346120269414,
-      "tier3": 0.4987935966504341
-    },
-    "degradation_score": 0.1987228115605186,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_05483.png",
-    "pred": 0.8686540674361992,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999508857727051,
-      "tier2": 0.7992956573175459,
-      "tier3": 0.8626627209399086
-    },
-    "degradation_score": 0.18933999225758794,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_05545.png",
-    "pred": 0.5129901598325949,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6894018054008484,
-      "tier2": 0.48452327136523876,
-      "tier3": 0.6441806990832786
-    },
-    "degradation_score": 0.18633126845389705,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_05739.png",
-    "pred": 0.8111055561808184,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999982118606567,
-      "tier2": 0.7258952625603416,
-      "tier3": 0.7698829682492201
-    },
-    "degradation_score": 0.19629807288927964,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06229.png",
-    "pred": 0.7720095250033264,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9605397582054138,
-      "tier2": 0.6676791321050944,
-      "tier3": 0.7404323292380691
-    },
-    "degradation_score": 0.16240335662210348,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06232.png",
-    "pred": 0.8102802734501781,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6885941028594971,
-      "tier2": 0.8842553800528913,
-      "tier3": 0.6644390051121862
-    },
-    "degradation_score": 0.19139270992727064,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06400.png",
-    "pred": 0.8090541214240572,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.808387815952301,
-      "tier2": 0.8524864930707503,
-      "tier3": 0.6082778548487142
-    },
-    "degradation_score": 0.169923113889609,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06522.png",
-    "pred": 0.8041162063997209,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9913090467453003,
-      "tier2": 0.6766827208202557,
-      "tier3": 0.8376637726890463
-    },
-    "degradation_score": 0.18966109794267932,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06610.png",
-    "pred": 0.8566686079773554,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999998807907104,
-      "tier2": 0.8264464130839363,
-      "tier3": 0.7295202802011514
-    },
-    "degradation_score": 0.17182649210657402,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_06792.png",
-    "pred": 0.8349544631731639,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9730350375175476,
-      "tier2": 0.8444097650871282,
-      "tier3": 0.640202251336646
-    },
-    "degradation_score": 0.18691160086008426,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_07293.png",
-    "pred": 0.8933883981763436,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 1.0,
-      "tier2": 0.864966090747372,
-      "tier3": 0.8462698930307481
-    },
-    "degradation_score": 0.17301028325728682,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_07569.png",
-    "pred": 0.7105177282438183,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9688249826431274,
-      "tier2": 0.774449916829904,
-      "tier3": 0.4104798936188967
-    },
-    "degradation_score": 0.21151913910250186,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_07661.png",
-    "pred": 0.8273068702444076,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9998890161514282,
-      "tier2": 0.7581779940538221,
-      "tier3": 0.7871033956218054
-    },
-    "degradation_score": 0.21123458091854133,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_07995.png",
-    "pred": 0.8487164030261333,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9692428708076477,
-      "tier2": 0.9349061531533941,
-      "tier3": 0.5384229784941277
-    },
-    "degradation_score": 0.19389329376031372,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_08180.png",
-    "pred": 0.9042972272885933,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999977350234985,
-      "tier2": 0.9024279717745499,
-      "tier3": 0.8572531042541355
-    },
-    "degradation_score": 0.1847568600125253,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/fake/tampered_08645.png",
-    "pred": 0.6434382757637659,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9997454285621643,
-      "tier2": 0.5661767872769781,
-      "tier3": 0.6021263089677099
-    },
-    "degradation_score": 0.20955825268988806,
-    "truth": "fake"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/03037a6766b93185.png",
-    "pred": 0.5035338432354445,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9932525753974915,
-      "tier2": 0.5059622659262931,
-      "tier3": 0.3707045933911491
-    },
-    "degradation_score": 0.1769918986506427,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/0664d97dbc749f9c.png",
-    "pred": 0.13733919418487817,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0007790583185851574,
-      "tier2": 0.26859855665486887,
-      "tier3": 0.46231242993197447
-    },
-    "degradation_score": 0.19386824318139084,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/0be8f77f1614556e.png",
-    "pred": 0.5392490751165134,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.815639853477478,
-      "tier2": 0.5776364129839714,
-      "tier3": 0.5101203314694147
-    },
-    "degradation_score": 0.25856289137641464,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/1034c6557e9fb8c1.png",
-    "pred": 0.1354708030104932,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 1.1038869160984177e-06,
-      "tier2": 0.2918426977478703,
-      "tier3": 0.4122027441842635
-    },
-    "degradation_score": 0.20037975144325282,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/1628ce58f2622f64.png",
-    "pred": 0.34683974652604105,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.33262163400650024,
-      "tier2": 0.48613446647425795,
-      "tier3": 0.5121139298831456
-    },
-    "degradation_score": 0.20982808170965275,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/1bc723457563f907.png",
-    "pred": 0.18604949756040493,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.3187475800514221,
-      "tier2": 0.33974454531088516,
-      "tier3": 0.3230134362494626
-    },
-    "degradation_score": 0.20224844404826198,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/1ff5c6d444b5825e.png",
-    "pred": 0.6591535438064627,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9943203926086426,
-      "tier2": 0.6533174913668932,
-      "tier3": 0.5101804846205614
-    },
-    "degradation_score": 0.23332286637879324,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/2220f1ab609f0843.png",
-    "pred": 0.3317493231287254,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.030901284888386726,
-      "tier2": 0.6169701978942235,
-      "tier3": 0.42316391259138275
-    },
-    "degradation_score": 0.2030682677581449,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/229d0b8353d1c98a.png",
-    "pred": 0.17713992310598933,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0393829308450222,
-      "tier2": 0.3632030885288049,
-      "tier3": 0.45168118784231454
-    },
-    "degradation_score": 0.24578714605065344,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/27c3f06ec5dc2ba3.png",
-    "pred": 0.2892039521245155,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6476126313209534,
-      "tier2": 0.3073560293334921,
-      "tier3": 0.48172578166755997
-    },
-    "degradation_score": 0.18765388741982947,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/27f252a476f25608.png",
-    "pred": 0.4705356967454053,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.2156500220298767,
-      "tier2": 0.6379179257882877,
-      "tier3": 0.5965133675452788
-    },
-    "degradation_score": 0.21423794085534675,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/2bc8ec84419a7906.png",
-    "pred": 0.5109174666694638,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.4780925512313843,
-      "tier2": 0.6198292359973504,
-      "tier3": 0.5109494960114852
-    },
-    "degradation_score": 0.17957980171289828,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/2cfeca31d019234e.png",
-    "pred": 0.6420981842789937,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999505281448364,
-      "tier2": 0.616841213494051,
-      "tier3": 0.48631147369742794
-    },
-    "degradation_score": 0.19182238285460568,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/307293f3a512832e.png",
-    "pred": 0.471990165147301,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9746083617210388,
-      "tier2": 0.4366722249262771,
-      "tier3": 0.4523209071645827
-    },
-    "degradation_score": 0.18244924523944922,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/31cb90aa388d7890.png",
-    "pred": 0.42471161859738243,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999994039535522,
-      "tier2": 0.3671191275623094,
-      "tier3": 0.5012490299639497
-    },
-    "degradation_score": 0.2595325690555865,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/324f9aab6ff2d5bb.png",
-    "pred": 0.6410829599686034,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9926522970199585,
-      "tier2": 0.4501135265673733,
-      "tier3": 0.8040286679065032
-    },
-    "degradation_score": 0.1834308676092926,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/42e7a4cbf61fd493.png",
-    "pred": 0.6354533784079038,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.5136406421661377,
-      "tier2": 0.7542877144502916,
-      "tier3": 0.5066182758185086
-    },
-    "degradation_score": 0.1756542861284181,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/4ac5f240639cac03.png",
-    "pred": 0.08387271830821186,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 3.1641855457564816e-05,
-      "tier2": 0.2835112524675862,
-      "tier3": 0.13771997925913187
-    },
-    "degradation_score": 0.21358460339744229,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/4bd05685b1e2c552.png",
-    "pred": 0.7393961967611116,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.8708374500274658,
-      "tier2": 0.7972692022533144,
-      "tier3": 0.45956620319135355
-    },
-    "degradation_score": 0.176918641794315,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/58c66c4583de8bf5.png",
-    "pred": 0.48573271777839977,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.19073517620563507,
-      "tier2": 0.6911603642060418,
-      "tier3": 0.5560630588240788
-    },
-    "degradation_score": 0.22029433787276054,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/60acad034d6ac8c5.png",
-    "pred": 0.354602878411839,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.024748478084802628,
-      "tier2": 0.5894813760463656,
-      "tier3": 0.49216587047908095
-    },
-    "degradation_score": 0.16106254406733184,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/6d5e67fd69df87a5.png",
-    "pred": 0.08241748705236453,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.07543880492448807,
-      "tier2": 0.11049114088362068,
-      "tier3": 0.39173773827779684
-    },
-    "degradation_score": 0.31406021889875435,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/76bb9873db655e13.png",
-    "pred": 0.31701259796370795,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0007942379452288151,
-      "tier2": 0.6647139019561408,
-      "tier3": 0.2684753241396339
-    },
-    "degradation_score": 0.16812379475402378,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/7bba4ecddd08ae72.png",
-    "pred": 0.1757033990914793,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0026638249401003122,
-      "tier2": 0.35975160258373023,
-      "tier3": 0.4867667514848307
-    },
-    "degradation_score": 0.2701110123369368,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/860a9efac6af93a0.png",
-    "pred": 0.561977924681809,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999775886535645,
-      "tier2": 0.509974120744154,
-      "tier3": 0.5005747411810422
-    },
-    "degradation_score": 0.18823479208663627,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/8bd5cae6314172b9.png",
-    "pred": 0.3071858442070464,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9979070425033569,
-      "tier2": 0.34133492382704445,
-      "tier3": 0.25232747611333495
-    },
-    "degradation_score": 0.2201868369251948,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/8e9ed33012d70d5c.png",
-    "pred": 0.09623200213793644,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.028627650812268257,
-      "tier2": 0.1534927262007596,
-      "tier3": 0.4440430262610778
-    },
-    "degradation_score": 0.3652058878028586,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/91995094dd129257.png",
-    "pred": 0.20026767329452122,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.006883620750159025,
-      "tier2": 0.39961543261141885,
-      "tier3": 0.46586234504914564
-    },
-    "degradation_score": 0.20181238104051397,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/995fec71969bd0bd.png",
-    "pred": 0.1296475034810467,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 4.481806172407232e-05,
-      "tier2": 0.10708693649055097,
-      "tier3": 0.7097891967878065
-    },
-    "degradation_score": 0.27184583027427234,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/9a99796dffaaa7d3.png",
-    "pred": 0.6697326480101445,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9831371903419495,
-      "tier2": 0.6415788040265947,
-      "tier3": 0.5342837950504932
-    },
-    "degradation_score": 0.2060448647234273,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/9e65133332e72eb0.png",
-    "pred": 0.660883580522223,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9999998807907104,
-      "tier2": 0.6940204610810418,
-      "tier3": 0.3886740983774278
-    },
-    "degradation_score": 0.1946557524972306,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/ab82eaf90724160f.png",
-    "pred": 0.4408694890101258,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0008791403379291296,
-      "tier2": 0.6702151435735091,
-      "tier3": 0.5829590176178296
-    },
-    "degradation_score": 0.18860435065355685,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/add5fb52ea5901cd.png",
-    "pred": 0.42237184925042687,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.002445435617119074,
-      "tier2": 0.6100984656643682,
-      "tier3": 0.7017866803203044
-    },
-    "degradation_score": 0.24025418740808557,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/b0071a6847984193.png",
-    "pred": 0.7439117206126791,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9889948964118958,
-      "tier2": 0.5949746498740556,
-      "tier3": 0.8068547102100437
-    },
-    "degradation_score": 0.19493632152286722,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/bdf7276b7255c403.png",
-    "pred": 0.5508091833099009,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9841782450675964,
-      "tier2": 0.4638256318795398,
-      "tier3": 0.5883026797962392
-    },
-    "degradation_score": 0.20937164291148058,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/c5cf1481d441cb77.png",
-    "pred": 0.13562831941989226,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.0002658029261510819,
-      "tier2": 0.28012345679012346,
-      "tier3": 0.45353417142066804
-    },
-    "degradation_score": 0.2591007445090412,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/c6df5b2700e2a0d3.png",
-    "pred": 0.6284686469337482,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9925893545150757,
-      "tier2": 0.5011980574628,
-      "tier3": 0.692526597220629
-    },
-    "degradation_score": 0.21193840615428444,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/c8ef1b2afccd2a46.png",
-    "pred": 0.3392923570336886,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6273798942565918,
-      "tier2": 0.31127445781668694,
-      "tier3": 0.6206231001386218
-    },
-    "degradation_score": 0.1977532141707517,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/cc7894623e2db539.png",
-    "pred": 0.0718411507272315,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 2.3997015887289308e-05,
-      "tier2": 0.19907921855099844,
-      "tier3": 0.1931441421810104
-    },
-    "degradation_score": 0.1934537084443605,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/d953914a018b80ad.png",
-    "pred": 0.27607856265840347,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.000571400101762265,
-      "tier2": 0.6081378614265187,
-      "tier3": 0.5350069691471256
-    },
-    "degradation_score": 0.4200702155537959,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/ddfc9081e5ee8dc1.png",
-    "pred": 0.6241756773347876,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9992231130599976,
-      "tier2": 0.6666523823738724,
-      "tier3": 0.35385325912826676
-    },
-    "degradation_score": 0.1959415244689286,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/e893057079087908.png",
-    "pred": 0.18131779290646013,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.16074813902378082,
-      "tier2": 0.4015843527410714,
-      "tier3": 0.2912549666759701
-    },
-    "degradation_score": 0.1992409266355939,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/ed392911fea257be.png",
-    "pred": 0.4820867757250188,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.6666972041130066,
-      "tier2": 0.4862902300409676,
-      "tier3": 0.5941357006977508
-    },
-    "degradation_score": 0.19731816615600434,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/f09e3a1151ad2a6d.png",
-    "pred": 0.19994882808820186,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.08085254579782486,
-      "tier2": 0.2302668611581655,
-      "tier3": 0.732758448531029
-    },
-    "degradation_score": 0.22608422883049956,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/f1a533157c1022c8.png",
-    "pred": 0.3834240208857935,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9500680565834045,
-      "tier2": 0.3060049237096029,
-      "tier3": 0.515733295726916
-    },
-    "degradation_score": 0.17155230135395613,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/f2b02fe7b2ddcb9c.png",
-    "pred": 0.35150131288024894,
-    "label": "real",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.01868272013962269,
-      "tier2": 0.5202033208510843,
-      "tier3": 0.6559408759751041
-    },
-    "degradation_score": 0.19654078457502042,
-    "truth": "real"
-  },
-  {
-    "image_path": "data/raw/sid_set/val/real/fd568a2839353a92.png",
-    "pred": 0.6493746651166336,
-    "label": "fake",
-    "tiers_used": [
-      "tier2",
-      "tier1",
-      "tier3"
-    ],
-    "tier_scores": {
-      "tier0": null,
-      "tier1": 0.9932998418807983,
-      "tier2": 0.577656940788218,
-      "tier3": 0.5944070686108021
-    },
-    "degradation_score": 0.20391372426062754,
-    "truth": "real"
+      "tier2": 0.9661468180104897,
+      "tier3": 0.9566768243968162
+    },
+    "fusion_pred": 0.9981484197907842,
+    "router_pred": null,
+    "degradation_score": 0.18985464050147505,
+    "transformation_profile": null
   }
 ]

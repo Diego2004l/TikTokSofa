@@ -69,15 +69,47 @@ python -m src.semantic.train_probe --real-dir data/raw/cifake/train/REAL --fake-
 #    then fits the degradation-aware logistic-regression meta-model.
 python -m src.train_fusion --real-dir data/raw/sid_set/eval/real --fake-dir data/raw/sid_set/eval/fake --scores-cache outputs/_fusion_scores.npz
 
-# 5. Run the cascade end-to-end
+# 4b. Transformation profiler (Feature 2) — auto-labelled synthetic data, reuses Tier 2 features
+python -m src.transformation.train --clean-dir data/raw/sid_set/eval/real --out outputs/transformation_profiler.joblib
+
+# 4c. Adaptive evidence router (Feature 3) — trained on the held-out fusion split, out-of-fold
+python -m src.router.train --real-dir data/raw/sid_set/eval/real --fake-dir data/raw/sid_set/eval/fake \
+    --profiler outputs/transformation_profiler.joblib --out outputs/router_model.joblib
+
+# 4d. Confidence model + abstention policy (Feature 4) — thresholds tuned on validation for a target FPR
+python -m src.confidence.tune --real-dir data/raw/sid_set/val/real --fake-dir data/raw/sid_set/val/fake \
+    --target-fpr 0.05 --min-selective-accuracy 0.92
+
+# 5. Run the cascade end-to-end (auto-picks up the profiler / router / abstention artifacts if present;
+#    output gains transformation_profile, combiner, and an AI/REAL/UNKNOWN outcome + confidence)
 python -m src.infer path/to/image_dir --out outputs/predictions.json
 
-# 6. Robustness table (isolated + compound transforms, per tier)
+# 6. Robustness table (isolated + compound transforms, per tier) — original quick script
 python -m src.eval.robustness --real-dir data/raw/val_coco/val2017 --fake-dir data/raw/val_dalle --out outputs/robustness_summary.csv
 
+# 6b. Full robustness benchmark (Feature 1): every model x 50+ conditions (isolated at several
+#     severities, named compound chains, seeded random compound chains), full metric set
+#     (ROC-AUC, PR-AUC, accuracy, P/R/F1, FPR/TPR, confusion, calibration), CSV+JSON+Markdown
+#     report + degradation curves. Uses HELD-OUT data only; never tunes anything.
+python -m src.eval.robustness_bench --real-dir data/raw/val_coco/val2017 --fake-dir data/raw/val_dalle \
+    --out-dir outputs/robustness --n-samples 300 --seed 0
+
 # 7. Cross-generator holdout (the real generalization test)
-python -m src.eval.cross_generator --data-root data/raw/wildfake --holdout-family <family_name>
+python -m src.eval.cross_generator --data-root data/raw/wildfake --holdout-family <family_name> --all-methods
+
+# 7b. Full leave-one-generator-family-out rotation + known-vs-unseen summary (Feature 5)
+python -m src.eval.cross_generator_full --data-root data/raw/wildfake --out-dir outputs/cross_generator
+
+# 8. Router baselines + ablation (Feature 3/5) and the final research table (Feature 5)
+python -m src.router.baselines --train-real data/raw/sid_set/val/real --train-fake data/raw/sid_set/val/fake \
+    --test-real data/raw/benchmark/real --test-fake data/raw/benchmark/fake --out-dir outputs/router_ablation
+python -m src.confidence.evaluate --real-dir data/raw/benchmark/real --fake-dir data/raw/benchmark/fake --out-dir outputs/abstention_eval
+python -m src.eval.research_table --out-dir outputs/research_table
 ```
+
+New evaluation framework docs: `docs/robustness_benchmark.md` (Feature 1),
+`docs/adaptive_evidence_system.md` (Features 2–4), `docs/cross_generator_holdout.md` (Feature 5).
+Tests: `pytest tests/` (or run any module standalone, e.g. `python -m tests.test_router`).
 
 `src/infer.py` is designed to degrade gracefully: any tier whose trained artifact isn't present
 yet is skipped with a `[warn]` and a note in the output, rather than crashing — run it any time
@@ -85,18 +117,22 @@ after step 1 to confirm the JSON schema end-to-end even before every tier is tra
 
 ## Limitations (current state of this repo)
 
-**First-pass results are in** (`outputs/robustness_summary.csv`, `docs/error_analysis.md`): a
-small Kaggle-T4 run on 4 SID_Set shards — fused AUC 0.955 clean / 0.949 robust-avg, beating every
-individual tier. `notebooks/colab_train.ipynb` (Colab **and** Kaggle) or `scripts/run_all.sh`
-(local, no GPU needed) reproduce it end to end.
+**Combined-training results are in** (`outputs/robustness_summary.csv`, `docs/error_analysis.md`):
+trained on CIFAKE `train/` (50k real + 50k fake) merged with a SID_Set subset (1,131 real +
+2,245 fake), evaluated on CIFAKE's held-out `test/` split (10k / 10k) — **fused AUC 0.9958 clean
+/ 0.9917 FINAL_SCORE**, beating every individual tier. This fixed a cross-dataset generalization
+gap: the earlier SID_Set-only model scored ~0.60 fused AUC on CIFAKE and 0/30 on a known-fake
+spot-check; the combined model scores 27/30 (`docs/shortcut_learning_check.md`).
+`scripts/run_all.sh` (local, no GPU) or the Kaggle notebook reproduce it end to end.
 
 Known gaps before the final submission, in priority order:
-- Trained on a ~2:1 fake-heavy split with no threshold calibration -> ~34% false-positive rate at
-  a raw 0.5 cut despite the high AUC (`docs/error_analysis.md` has the fix).
-- Tier 1 is only lightly trained (4 epochs, ~1k images) — its 0.76 AUC drags the fused ceiling.
-- Cross-generator holdout (`docs/shortcut_learning_check.md`) not yet run — needs the WildFake split.
-- Headline numbers should come from the COCO + DALL-E benchmark set (spec section 2), not the
-  SID_Set held-out split used for iteration.
+- Tier 2 (forensic classifier) is the weak tier on the combined set — FINAL_SCORE 0.805, drops to
+  0.45–0.65 AUC under blur / resize / crop. Tier 1 + Tier 3 carry the fusion (`docs/error_analysis.md`).
+- The loaded `*.joblib` were pickled with scikit-learn 1.6.1; this env runs 1.9.0 (harmless
+  `InconsistentVersionWarning`, but pin the version for the final run).
+- Raw 0.5 threshold still uncalibrated — tune it (and the Feature 4 abstention policy) on a balanced val split.
+- Cross-*generator* holdout (`docs/shortcut_learning_check.md`) not yet run — needs the WildFake split.
+- A headline number from the COCO + DALL-E benchmark set (spec section 2) would be less CIFAKE-specific.
 - `*.joblib` / `*.pt` weights are gitignored — rerun the notebook/script to regenerate them.
 
 ## Related work — what's standard vs. what's this project's contribution

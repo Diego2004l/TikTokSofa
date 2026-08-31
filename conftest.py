@@ -1,0 +1,6 @@
+"""Ensures `pytest tests/` can import `src.*` when run from the repo root."""
+
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(__file__))

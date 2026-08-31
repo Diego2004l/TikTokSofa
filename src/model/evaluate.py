@@ -29,6 +29,14 @@ def score_images(model: Tier1CNN, paths: list[str], transform: Transform | None 
     return scores
 
 
+@torch.no_grad()
+def score_images_from_pil(model: Tier1CNN, images: list, device: str = "cpu") -> list[float]:
+    """Score already-loaded PIL images (used by the Feature 4 multi-crop pass)."""
+    preprocess = build_transform()
+    batch = torch.stack([preprocess(im.convert("RGB")) for im in images]).to(device)
+    return model.predict_proba(batch).cpu().tolist()
+
+
 def evaluate_auc(model: Tier1CNN, real_dir: str, fake_dir: str, transform: Transform | None = None, device: str = "cpu") -> float:
     real_scores = score_images(model, list_images(real_dir), transform, device)
     fake_scores = score_images(model, list_images(fake_dir), transform, device)

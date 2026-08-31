@@ -43,9 +43,27 @@ $PY -m src.model.train --real-dir $R_TRAIN --fake-dir $F_TRAIN --epochs "$EPOCHS
 echo "==> [5/6] Fusion meta-model (held-out val split)"
 $PY -m src.train_fusion --real-dir $R_VAL --fake-dir $F_VAL $dim_flag --scores-cache outputs/_fusion_scores.npz
 
+# Adaptive evidence system (Features 2-4). Opt in with RUN_ADAPTIVE=1 (adds ~a few min on CPU).
+if [ "${RUN_ADAPTIVE:-0}" != "0" ]; then
+    echo "==> [extra] Transformation profiler (F2) + adaptive router (F3) + abstention policy (F4)"
+    $PY -m src.transformation.train --clean-dir $R_VAL --out outputs/transformation_profiler.joblib --variants-per-image 5
+    $PY -m src.router.train --real-dir $R_VAL --fake-dir $F_VAL $dim_flag \
+        --profiler outputs/transformation_profiler.joblib --out outputs/router_model.joblib
+    $PY -m src.confidence.tune --real-dir $R_VAL --fake-dir $F_VAL $dim_flag \
+        --target-fpr "${TARGET_FPR:-0.1}" --min-selective-accuracy "${MIN_SEL_ACC:-0.85}" --all-multicrop
+fi
+
 echo "==> [6/6] Eval — robustness table + cascade inference"
 $PY -m src.eval.robustness --real-dir $R_VAL --fake-dir $F_VAL --n-samples 120 $dim_flag --out outputs/robustness_summary.csv
 $PY -m src.infer $F_VAL --out outputs/predictions.json --always-escalate $dim_flag
+
+# Full robustness benchmark (Feature 1). Much heavier (50+ conditions x 6 models); opt in with
+# RUN_FULL_BENCH=1. Ideally point --real-dir/--fake-dir at the held-out COCO+DALL-E benchmark set.
+if [ "${RUN_FULL_BENCH:-0}" != "0" ]; then
+    echo "==> [extra] Full robustness benchmark (src.eval.robustness_bench)"
+    $PY -m src.eval.robustness_bench --real-dir $R_VAL --fake-dir $F_VAL \
+        --n-samples "${BENCH_SAMPLES:-150}" --seed 0 $dim_flag --out-dir outputs/robustness
+fi
 
 echo
 echo "==> Done. Commit outputs/robustness_summary.csv + outputs/predictions.json and fill in docs/error_analysis.md."
